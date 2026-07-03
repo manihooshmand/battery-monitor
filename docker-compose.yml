@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  battery-exporter:
+    build: .
+    container_name: battery-exporter
+    # Battery Directory ---> Container
+    volumes:
+      - /sys/class/power_supply:/sys/class/power_supply:ro
+    # Path
+    environment:
+      - BATTERY_PATH=/sys/class/power_supply/BAT1
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    restart: unless-stopped
