@@ -1,4 +1,4 @@
-# 🔋 Battery Monitor Stack
+# 🔋 Battery Monitor Observability
 
 A complete, containerized monitoring stack for Linux laptops using **Go**, **Prometheus**, and **Grafana**.
 
@@ -29,19 +29,7 @@ This project reads battery metrics directly from `/sys/class/power_supply/` and 
 
 ## 📸 Dashboard Preview
 
-> _Add a screenshot of your Grafana dashboard here._
-
-```text
-docs/dashboard.png
-```
-
-Or simply include:
-
-```markdown
-![Battery Monitor Dashboard](docs/dashboard.png)
-```
-
----
+---<img width="1621" height="757" alt="Screenshot from 2026-07-03 06-30-34" src="https://github.com/user-attachments/assets/7fbd7dfa-5444-4363-b0df-e4df72641292" />
 
 ## 🚀 Quick Start
 
@@ -71,7 +59,6 @@ sudo docker compose up -d --build
 - **Username:** `admin`
 - **Password:** `admin`
 
----
 
 ## 🛠️ Tech Stack
 
@@ -81,16 +68,3 @@ sudo docker compose up -d --build
 | Metrics Collection | Prometheus |
 | Visualization | Grafana |
 | Containerization | Docker & Docker Compose |
-
----
-
-## 📂 Project Structure
-
-```text
-.
-├── exporter/
-├── prometheus/
-├── grafana/
-├── docker-compose.yml
-└── README.md
-```
